@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="ObjectController.cs" company="Google LLC">
-// Copyright 2020 Google LLC. All Rights Reserved.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,21 +37,21 @@ public class ObjectController : MonoBehaviour
     // The objects are about 1 meter in radius, so the min/max target distance are
     // set so that the objects are always within the room (which is about 5 meters
     // across).
-    private const float k_MinObjectDistance = 2.5f;
-    private const float k_MaxObjectDistance = 3.5f;
-    private const float k_MinObjectHeight = 0.5f;
-    private const float k_MaxObjectHeight = 3.5f;
+    private const float _minObjectDistance = 2.5f;
+    private const float _maxObjectDistance = 3.5f;
+    private const float _minObjectHeight = 0.5f;
+    private const float _maxObjectHeight = 3.5f;
 
-    private Renderer m_MyRenderer;
-    private Vector3 m_StartingPosition;
+    private Renderer _myRenderer;
+    private Vector3 _startingPosition;
 
     /// <summary>
     /// Start is called before the first frame update.
     /// </summary>
     public void Start()
     {
-        m_StartingPosition = transform.localPosition;
-        m_MyRenderer = GetComponent<Renderer>();
+        _startingPosition = transform.localPosition;
+        _myRenderer = GetComponent<Renderer>();
         SetMaterial(false);
     }
 
@@ -69,8 +69,8 @@ public class ObjectController : MonoBehaviour
 
         // New object's location.
         float angle = Random.Range(-90, 90);
-        float distance = Random.Range(k_MinObjectDistance, k_MaxObjectDistance);
-        float height = Random.Range(k_MinObjectHeight, k_MaxObjectHeight);
+        float distance = Random.Range(_minObjectDistance, _maxObjectDistance);
+        float height = Random.Range(_minObjectHeight, _maxObjectHeight);
         Vector3 newPos = new Vector3(Mathf.Cos(angle) * distance, height,
                                      Mathf.Sin(angle) * distance);
         randomSib.transform.localPosition = newPos;
@@ -116,7 +116,7 @@ public class ObjectController : MonoBehaviour
     {
         if (InactiveMaterial != null && GazedAtMaterial != null)
         {
-            m_MyRenderer.material = gazedAt ? GazedAtMaterial : InactiveMaterial;
+            _myRenderer.material = gazedAt ? GazedAtMaterial : InactiveMaterial;
         }
     }
 }

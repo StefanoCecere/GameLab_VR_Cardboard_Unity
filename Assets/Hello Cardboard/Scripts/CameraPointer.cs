@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="CameraPointer.cs" company="Google LLC">
-// Copyright 2020 Google LLC. All Rights Reserved.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float k_MaxDistance = 10;
-    private GameObject m_GazedAtObject = null;
+    private const float _maxDistance = 10;
+    private GameObject _gazedAtObject = null;
 
     /// <summary>
     /// Update is called once per frame.
@@ -35,28 +35,28 @@ public class CameraPointer : MonoBehaviour
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, k_MaxDistance))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
             // GameObject detected in front of the camera.
-            if (m_GazedAtObject != hit.transform.gameObject)
+            if (_gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
-                m_GazedAtObject?.SendMessage("OnPointerExit");
-                m_GazedAtObject = hit.transform.gameObject;
-                m_GazedAtObject.SendMessage("OnPointerEnter");
+                _gazedAtObject?.SendMessage("OnPointerExit");
+                _gazedAtObject = hit.transform.gameObject;
+                _gazedAtObject.SendMessage("OnPointerEnter");
             }
         }
         else
         {
             // No GameObject detected in front of the camera.
-            m_GazedAtObject?.SendMessage("OnPointerExit");
-            m_GazedAtObject = null;
+            _gazedAtObject?.SendMessage("OnPointerExit");
+            _gazedAtObject = null;
         }
 
         // Checks for screen touches.
         if (Google.XR.Cardboard.Api.IsTriggerPressed)
         {
-            m_GazedAtObject?.SendMessage("OnPointerClick");
+            _gazedAtObject?.SendMessage("OnPointerClick");
         }
     }
 }
