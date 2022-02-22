@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Hello Cardboard/Scenes/HelloCardboard.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
   - enabled: 0
+    path: Assets/Hello Cardboard/Scenes/VrMode.unity
+    guid: 4812ec05e87b8414abcdfe0d625c0e60
+  - enabled: 0
     path: Assets/Hello Cardboard XL/HelloCardboard-XL.unity
     guid: dee7b7bee63ec95468620aab2f0fdf01
   - enabled: 0
