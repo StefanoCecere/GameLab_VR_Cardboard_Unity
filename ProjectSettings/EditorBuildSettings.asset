@@ -5,9 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Hello Cardboard/Scenes/HelloCardboard.unity
     guid: 145a2a45d7bc746b19cb68410368bf96
+  - enabled: 0
+    path: Assets/Hello Cardboard XL/HelloCardboard-XL.unity
+    guid: dee7b7bee63ec95468620aab2f0fdf01
+  - enabled: 0
+    path: Assets/demo_noar/Scenes/Main.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 0
+    path: Assets/demo_360video/Scenes/Cardboard360Video.unity
+    guid: 3a46477113634b74bacab93a18523f63
+  - enabled: 0
+    path: Assets/demo_sphere/Scenes/photosphere_doublesided.unity
+    guid: eb8904813b6846b46afff44d69268440
+  - enabled: 0
+    path: Assets/demo_sphere/Scenes/cardboard_camera_panorama_inverted.unity
+    guid: 7eceef96607a038468f2692932214b50
+  - enabled: 0
+    path: Assets/demo_sphere/Scenes/photosphere_inverted.unity
+    guid: ab05c8103dc67aa4c8fba1f47f943e14
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 69f1b6283c3bc4edd960e2a58822a0ad,
       type: 2}
